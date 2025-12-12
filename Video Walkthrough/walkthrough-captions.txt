@@ -1,0 +1,18 @@
+1	(0:00) Start video at the Login page (/).	[START] Application Entry: The application directs to the secure Login page.							
+2	(0:01 - 0:09) Log in with the first user: Joanna.	Logging in successfully and landing on the Dashboard (Action Hub).							
+3	(0:15) Navigate to Projects. Click Edit on an existing project (e.g., "Final Demo Review").	DEMO 1: Update Function (CRUD & Self-Authorisation). Confirming Joanna has full edit rights over her own project.							
+4	(0:24) Click + Add New Project. Input quick details (Title: Final Check, Description: Confirm styling done.). Click Create Project.	DEMO 2: Create Function (CRUD). Project created successfully and visible in the list.							
+5	(1:01) Click Delete on the new project ("Final Check"). Confirm deletion and refresh the list.	DEMO 3: Delete Function (CRUD). Confirming permanent deletion and successful removal from the view.							
+6	(1:12) Log Joanna out. Log in as the second user: Sam.	 Logging in with a different authenticated user.							
+7	(1:26) Navigate to Projects.	Showing the Project List for Sam, confirming he only sees his own projects.							
+8	(1:32) Use the Search by: Title dropdown, type part of a title, and click Search.	DEMO 4: Dynamic Search (Read Function). Testing the fuzzy search by Title.							
+9	(1:42) Change to Search by: Start Date. Use the date picker and click Search.	Testing the search by exact Start Date. Search functionality is complete.							
+10	(2:01) Manually paste and go to the Edit URL of one of Sam's projects (http://127.0.0.1:8000/projects/3/edit).	Check A: Self-Authorisation. Confirming Sam can access and edit his own data. The Policy allows this.							
+11	(2:10) Log Sam out.	Logging out Sam to test unauthenticated security.							
+12	(2:14) Manually paste and go to the same URL (http://127.0.0.1:8000/projects/3/edit).	Check B: Authentication Security. Attempting access without being logged in.							
+13	(2:18) The page redirects to the Login Page.	Security Success: Unauthenticated access is blocked by the auth middleware.							
+14	(2:21) Click Register. Register a New User (User: Dona).	 Registering a brand new user for the final security test.							
+15	(2:56) Lands on Dashboard. Navigate to Projects.	Check C: Cross-User Visibility. Dona is viewing the Projects List. The list correctly displays only Dona's own projects (none, currently).							
+16	(3:15) Manually paste and go to Sam's project Edit URL (http://127.0.0.1:8000/projects/3/edit).	Check D: Authorization Policy Security. Attempting to edit another user's data while authenticated.							
+17	(3:19) The application displays the "403 THIS ACTION IS UNAUTHORIZED" error.	Security Success: The ProjectPolicy correctly denies access to Project 3 because Dona is not the owner (uid mismatch).							
+18	(3:27) Log the new user out.	[END] All functional and security requirements have been demonstrated successfully.							
