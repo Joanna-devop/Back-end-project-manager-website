@@ -4,7 +4,7 @@ Student Name - Joanna Masiewicz
 Student ID - 250372209
 Test User Credentials - Username: sam@test.com & joanna@test.com/ Password: password
 Application Entry Page - http://127.0.0.1:8000/ (Redirects to Login)
-Source Code Link - 
+Source Code Link - https://github.com/Joanna-devop/Back-end-project-manager-website
 
 Database Data Submission - The database structure and test data are submitted using Laravel's file-based system. Structure Files (SQL equivalent): Located in the database/migrations/ folder. Data Files (SQL equivalent): Test users (Sam, Joanna, Dona) and demo projects are seeded via the database/seeders/DatabaseSeeder.php file.
 
